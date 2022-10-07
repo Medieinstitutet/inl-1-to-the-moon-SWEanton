@@ -1,0 +1,465 @@
+.clearfix::after {
+	content: "all";
+	clear: both;
+	display: table;
+}
+
+
+
+*{
+	padding:0;
+	margin:0;
+}
+.fullHeight{
+	min-height:100vh;
+}
+
+/*astronaut*/
+.astronaut{
+	background-image:url('../img/astronaut.jpg');
+	background-size:cover;
+	background-position:50% 50%;
+}
+.astronaut .headingBox{
+	border:5px solid black;
+	width:9rem;
+	background-color:rgba(255, 255, 255, 0.8);
+	position:absolute;
+	top:90px;
+	left:40px;
+	padding:20px;
+	font-family:"Rubik", sans-serif;
+	margin: 0 auto;
+}
+.astronaut .allCaps{
+	text-transform:uppercase;
+}
+.astronaut .headingBox .headerText{
+	text-align:center;
+	font-size:3rem;
+	font-weight:500;
+	margin-bottom:30px;
+}
+.astronaut .headingBox .headerLink{
+	margin-bottom:30px;
+	text-decoration:none;
+	color:black;
+}
+
+/*hamburgare*/
+.hamburgerMenu{
+	width:35px;
+	height:35px;
+	background:transparent;
+	border:0;
+	position:fixed;
+	right:20px;
+	top:20px;
+	z-index:99999;
+	pointer-events:none;
+}
+.hamburgerMenu .lines{
+	display:block;
+	width:25px;
+	height:3px;
+	background-color:black;
+	border-radius:3px;
+	margin-bottom:4px;
+	position:relative;
+	right:0;
+	transition:all 0.3s ease-in-out;
+}
+.menuToggle{
+	position:fixed;
+	top:20px;
+	right:20px;
+	z-index:1;
+	width:35px;
+	height:35px;
+	opacity:0;
+	cursor:pointer;
+}
+.menuToggle:checked + .hamburgerWrap .hamburgerMenu .lines{
+	position:absolute;
+	transition:all 0.3s ease-in-out;
+}
+.menuToggle:checked + .hamburgerWrap .hamburgerMenu .lines:nth-child(2){
+	opacity:0;
+}
+.menuToggle:checked + .hamburgerWrap .hamburgerMenu .lines:nth-child(1){
+	transform:rotate(45deg);
+}
+.menuToggle:checked + .hamburgerWrap .hamburgerMenu .lines:nth-child(3){
+	transform:rotate(-45deg);
+}
+.navBar{
+	position:fixed;
+	top:0;
+	left:0;
+	background-color:rgba(255, 255, 255, 0.5);
+	width:100vw;
+	height:100vh;
+	opacity:0;
+	transition:all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+	visibility:hidden;
+}
+.navBar a{
+	color:black;
+	text-decoration: none;
+}
+.menuToggle:checked + .hamburgerWrap .navBar{
+	visibility:visible;
+	opacity:1;
+}
+.menu{
+	margin:0;
+	padding:0;
+	list-style:none;
+	display:flex;
+	flex-direction:column;
+	height:100%;
+	justify-content:space-evenly;
+	text-align:center;
+	font-family:"Rubik", sans-serif;
+	font-weight:bold;
+	font-size:4rem;
+	text-shadow:0px 5px rgba(0, 0, 0, 0.3);
+}
+.navBar .menu .underline{
+	text-decoration:none;
+	background-image:linear-gradient(90deg, pink, #c10294);
+	background-repeat:no-repeat;
+	background-position:bottom left;
+	background-size:0% 3px;
+	border-radius:5px;
+	transition:background-size 300ms ease-in-out;
+}
+
+/*textsida*/
+.textPage{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/space.jpg');
+	background-size:cover;
+	color:rgb(255, 255, 255);
+	font-family:"Rubik", sans-serif;
+}
+.textPage .wrapper{
+	display:block;
+	position:relative;
+}
+.textPage .columns{
+	width:100%;
+	box-sizing:border-box;
+	padding:0 70px;
+}
+/*mobil*/ 
+	@media screen and (max-width: 900px){
+.textPage .spaceVentures{
+	margin:auto;
+	width:90%;
+  	padding:10px;
+	font-size:800%;
+	height:200px;
+	text-shadow:2px 2px 10px #000000;
+	
+}
+.textPage .space{
+	width: auto;
+	font-weight:600;
+	font-size: 52px;
+	position:relative;
+	z-index:9999;
+	top:-4px;
+	left:-40px;
+}
+.textPage .ventures{
+	font-family:"Times New Roman", serif;
+	font-weight:bold;
+	font-size:65px;
+	opacity:0.7;
+	position:absolute;
+	left: 88px;
+	top:93px;
+	letter-spacing: 0.1rem;
+	
+}
+
+.textPage .titleTextPage{
+	font-size:20px;
+	font-weight:bolder;
+	margin:15px -45px;
+}
+
+.textPage .textStyle{
+	line-height:1.6;
+	margin:7px -46px;
+	font-weight:200;
+	font-size:10.5px;
+	font-weight: lighter;
+}
+.textPage .quotes{
+	font-style:italic;
+	
+	
+}
+.textPage .quoteA{
+	font-size:15px;
+	line-height:1.2;
+	position:relative;
+	left:75px;
+	margin:20px -75px;
+	font-weight: lighter;
+}
+
+.majortomimg {
+	
+	display:none;
+}
+
+
+.textPage .quoteA::before{
+	font-weight:bold;
+	font-size:1.8rem;
+	color:white;
+	opacity:60%;
+	font-family:"Rubik" , sans-serif;
+	position:absolute;
+	left:-15px;
+}
+.textPage .quoteA::after{
+	font-weight:bold;
+	font-size:1.5rem;
+	color:rgb(84, 26, 26);
+	opacity:60%;
+	font-family:"Rubik" , sans-serif;
+	position:absolute;
+	top:65px;
+}
+.textPage .gradient .textStyleQuote{
+	display:none;
+}
+.insertLineBreak::before{
+	content:"\a";
+	white-space:pre;
+}
+.textPage .pinkText{
+	font-size:0.75rem;
+	color:#931049;
+	left:20px;
+	padding: 20px 10px;
+	margin:-25px -8px -25px -34px;
+	
+}
+.textPage .linkUnderline{
+	text-decoration:underline;
+}
+ .arrow{
+	font-size:1rem;
+}
+	}
+/*foot*/
+.cookiePopUp{
+	box-sizing:border-box;
+	z-index:5;
+	background-color:#041424;
+	color:#fff;
+	position:fixed;
+	bottom:0;
+	width:100%;
+	font-family:"Rubik", sans-serif;
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+
+	padding:14px 2%;
+}
+.cookiePopUp .cookieText .cookieButton .buttonText{
+	display:inline-block;
+	padding:0 20px;
+}
+.cookiePopUp .cookieText{
+	color:#8a073b;
+	text-shadow:1px 1px 2px rgb(43, 22, 22), 0 0 1em blue, 0 0 0.2em blue;
+	font-size:0.8rem;
+
+}
+.buttonText{
+	color:white;
+	font-weight:bold;
+}
+.cookiePopUp .cookieButton{
+	background-color:#003568;
+	border:0;
+	padding:7px 13px;
+	cursor:pointer;
+}
+.cookiePopUp.disable{
+	display:none;
+}
+
+/*desktop*/
+@media screen and (min-width:1024px){
+	.menu li:hover .underline{
+		background-size:100% 7px;
+		color:inherit;
+		display: block;
+	}
+	.astronaut .headingBox{
+		width:15rem;
+	}
+	.astronaut .headingBox .headerLink{
+		float:right;
+		cursor:pointer;
+	}
+	.astronaut .headingBox .headerLink span{
+		position:relative;
+		left:0;
+		transition:left 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+	}
+	.astronaut .headingBox .headerLink:hover span{
+		left:10px;
+	}
+	.textPage{
+		background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/space.jpg');
+		background-size:cover;
+
+
+	}
+	.textStyleQuote{
+	font-size:3rem;
+	line-height:1.2;
+	position:relative;
+	left:-145px;
+	margin:100px 140px;
+	background-clip: text;
+	font-style: italic;
+	color: #542e3b;
+	background-image: -webkit-linear-gradient(315deg, #542e3b 38%, #474d47 63%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+  
+	}
+
+	.textPage{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/space.jpg');
+	background-size:cover;
+	color:white;
+	font-family:"Rubik", sans-serif;
+}
+.textPage .wrapper{
+	display:flex;
+	position:relative;
+}
+.textPage .columns{
+	
+	box-sizing:border-box;
+
+	
+}
+
+.majortomimg {
+	
+	display:block;
+	width: 100px;
+	height: auto;
+	float: right;
+	transform: rotate(3deg);
+	
+	
+}
+
+.textPage .space{
+    width: auto;
+    font-weight:600;
+    font-size:115px;
+    position:relative;
+    z-index:3;
+    top:100px;
+}
+	
+
+.textPageLeftColumns{
+	float: left;
+	
+}
+
+	
+
+.textPage .ventures{
+    font-family:"Times New Roman", serif;
+    font-weight:bold;
+    font-size:9rem;
+    opacity:0.5;
+    position:relative;
+    left: 9.5px;
+    top: 22px;
+	
+}
+.textPage .titleTextPage{
+	font-size:2.3rem;
+	font-weight:bold;
+	margin:142px 5px 20px 20px;
+	bottom:20px;
+	
+	
+}
+.textPage .textStyle{
+	line-height:2;
+	margin:8px 15px;
+	font-weight:400;
+	font-size:1rem;
+	font-weight: lighter;
+	opacity:0.6;
+}
+.textPage .quotes{
+	font-style:italic;
+	font-weight:300;
+}
+.textPage .quoteA{
+	font-size:1.5rem;
+	line-height:1.2;
+	position:relative;
+	left:75px;
+	margin:64px 0px;
+	opacity:0.6;
+}
+.textPage .quoteA::before{
+	font-weight:bold;
+	font-size:2rem;
+	color:white;
+	opacity:60%;
+	font-family:"Rubik" , sans-serif;
+	position:absolute;
+	left:-15px;
+}
+.textPage .quoteA::after{
+	font-weight:bold;
+	font-size:1.5rem;
+	color:white;
+	opacity:60%;
+	font-family:"Rubik" , sans-serif;
+	position:absolute;
+	top:65px;
+}
+.textPage .gradient .quoteB{
+	font-weight: bold;
+}
+.insertLineBreak::before{
+	content:"\a";
+	white-space:pre;
+}
+.textPage .pinkText{
+	font-size:0.85rem;
+	color:#740e3a;
+}
+.textPage .linkUnderline{
+	text-decoration:underline;
+}
+ .arrow{
+	font-size:1.5rem;
+}
+
+
+
+ 
+}
